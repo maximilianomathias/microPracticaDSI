@@ -12,6 +12,7 @@ export class AppComponent {
     ['Arroz tres delicias', 3.50],
     ['Cerdo agridulce',5.50],
     ['Ternera con bambu y setas',7.00]];
+  private lineas:Array<[number, number]>;
   public codProducto= -1;
   public importe = 0.0;
 
@@ -20,12 +21,12 @@ export class AppComponent {
     var producto = this.productos[this.codProducto][0];
     var precio:number=this.productos[this.codProducto][1];
     this.lineas.push([producto,precio]);
-    this.importe=this.importe+preio;
+    this.importe=this.importe+precio;
   }
 
   public delLinea(i)
   {
-    this.omporte-=this.lineas[i][i];
+    this.importe-=this.lineas[i][i];
     this.lineas.splice(i,i);
   }
 }
