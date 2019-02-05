@@ -1,22 +1,21 @@
-.classform1 label{
+.classform1
+label{
   width: 100px;
-  display:inline-block;
+  display: inline-block;
 }
-
-.classform1 input{
+input{
   width:200px;
 }
-
-.classform1 select{
-  width:300px;
+select{
+  width: 300px;
 }
 
 .class_comanda{
-  background-color: coral;
+  background: coral;
   display: block;
   width: 450px;
 }
 
 .class_comanda .titulo{
-  text-align:center;
+  text-align: center;
 }
