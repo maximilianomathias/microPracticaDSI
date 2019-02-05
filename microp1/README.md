@@ -1,3 +1,11 @@
+
+## Introducción
+La presente micro-práctica consiste en un ejercicio guiado que el alumno deberá resolver de manera individual.
+## Objetivos
+Adquirir conocimientos básicos sobre el funcionamiento de angular que servirá como base para la utilización del framework Ionic 3.
+## Duración
+La resolución de la micro-práctica comenzará durante la clase práctica y deberá ser actualizada en el repositorio de Github como máximo antes del inicio de la próxima clase práctica.
+
 # Microp1
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 7.2.3.
