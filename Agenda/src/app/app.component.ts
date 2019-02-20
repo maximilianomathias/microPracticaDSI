@@ -28,9 +28,8 @@ export class AppComponent {
     {
       title: 'Acerca de', 
       url: '/acerca-de',
-      icon: 'about'
+      icon: 'list'
     },
-    
   ];
 
   constructor(
