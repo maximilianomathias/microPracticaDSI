@@ -1,12 +1,8 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { ContactService } from '../../services/contact.service';
 
-/**
- * Generated class for the NuevoContactoPage page.
- *
- * See https://ionicframework.com/docs/components/#navigation for more info on
- * Ionic pages and navigation.
- */
+
 
 @IonicPage()
 @Component({
@@ -15,7 +11,12 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 })
 export class NuevoContactoPage {
 
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
+  constructor(public navCtrl: NavController, public navParams: NavParams, private conctactService: ContactService) {
+  }
+
+  onAddContact(value:{nombre:string, organizacion:string,movil:string,correo:string}){
+    this.conctactService.addContact(value);
+    this.navCtrl.pop();
   }
 
   ionViewDidLoad() {

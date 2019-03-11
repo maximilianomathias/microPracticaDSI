@@ -13,7 +13,7 @@ export class LibretaContactosPage {
 
   contacts: Contact[]=[];
 
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
+  constructor(public navCtrl: NavController, public navParams: NavParams, private ContactService:ContactService) {
   }
 
   ionViewWillEnter(){
