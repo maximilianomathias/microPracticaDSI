@@ -12,7 +12,9 @@ import { NuevoContactoPage } from '../pages/nuevo-contacto/nuevo-contacto';
 
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
-
+import { ContactService } from '../services/contact.service';
+import { Services } from '@angular/core/src/view';
+import { Contact } from '../models/contact.models';
 
 @NgModule({
   declarations: [
@@ -39,7 +41,8 @@ import { SplashScreen } from '@ionic-native/splash-screen';
   providers: [
     StatusBar,
     SplashScreen,
-    {provide: ErrorHandler, useClass: IonicErrorHandler}
+    {provide: ErrorHandler, useClass: IonicErrorHandler}, 
+    ContactService
   ]
 })
 export class AppModule {}
