@@ -3,6 +3,8 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { NuevoContactoPage } from '../nuevo-contacto/nuevo-contacto';
 import { Contact } from '../../models/contact.models';
 import { ContactService } from '../../services/contact.service';
+import { Observable } from 'rxjs/Observable';
+import { VerContactoPage } from '../ver-contacto/ver-contacto';
 
 @IonicPage()
 @Component({
@@ -11,13 +13,22 @@ import { ContactService } from '../../services/contact.service';
 })
 export class LibretaContactosPage {
 
-  contacts: Contact[]=[];
+  contacts$: Observable<Contact[]>;
 
   constructor(public navCtrl: NavController, public navParams: NavParams, private ContactService:ContactService) {
   }
 
   ionViewWillEnter(){
-    this.contacts = this.ContactService.getContacts();
+    this.contacts$ = this.ContactService
+    .getConctacts()
+    .snapshotChanges()
+    .map(
+      changes=> {
+        return changes.map(c=>({
+          key: c.playload.key, ...c.playload.val()
+        }));
+      });
+
   }
   
   ionViewDidLoad() {
@@ -28,4 +39,7 @@ export class LibretaContactosPage {
     this.navCtrl.push(NuevoContactoPage);
   }
 
+  onItemTapped($event, contact){
+    this.navCtrl.push(VerContactoPage, contact);
+  }
 }
