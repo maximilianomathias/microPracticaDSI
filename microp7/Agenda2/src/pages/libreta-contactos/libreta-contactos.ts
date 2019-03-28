@@ -25,7 +25,7 @@ export class LibretaContactosPage {
     .map(
       changes=> {
         return changes.map(c=>({
-          key: c.playload.key, ...c.playload.val()
+          key: c.payload.key, ...c.payload.val()
         }));
       });
 
